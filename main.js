@@ -23,6 +23,9 @@ const upgradeButton = document.getElementById("upgrade-button");
 const upgradeClickPower = document.getElementById("upgrade-click");
 const upgradeAutoCollector = document.getElementById("upgrade-auto");
 const upgradeEntangle = document.getElementById("upgrade-entangle");
+const introScreen = document.getElementById("intro-screen");
+const gameScreen = document.getElementById("game-screen");
+const startButton = document.getElementById("start-button");
 
 // UI Update
 
@@ -42,6 +45,11 @@ function getUpgradeCost(type) {
 }
 
 // Click Events
+
+startButton.addEventListener("click",() => {
+    introScreen.style.display = "none";
+    gameScreen.classList.remove("hidden");
+});
 
 ionButton.addEventListener("click", () => {
     ions += ionPerClick;

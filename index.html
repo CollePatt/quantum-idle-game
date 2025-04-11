@@ -7,7 +7,15 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <!-- This is going to be an intro screen for the game, help! idk what im doing -->
+  <div id="intro-screen">
+    <h1>Quantum Counting</h1>
+    <p>You are conducting quantum experiments to generate Ions. You are starting small. Things will get smaller.</p>
+    <button id="start-button">Start Experiment</button>
+  </div>
+
+
+  <div id="game-screen" class="hidden">
 
     <header>
       <h1>Quantum Idle</h1>
@@ -16,8 +24,10 @@
     </header>
 
     <main>
-      <button id="ion-zapper" class="main-button">Zap Ion</button>
-
+      <div class="ion-chamber">
+        <div class="chamber-core"></div>
+        <button id="ion-zapper" class="main-button">Zap Ion</button>
+      </div>  
       <section class="upgrades">
         <h2>Upgrades</h2>
         <button id="upgrade-click" class="upgrade-button">Upgrade Click Power</button>
