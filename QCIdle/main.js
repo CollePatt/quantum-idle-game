@@ -1,6 +1,5 @@
 let ions = 0;
-let a = 1;
-let b = 1;
+let ionsPerSec = 0;
 let ionPerClick = 1;
 let totalIons = 0;
 let coherencePoints = 0;
@@ -13,6 +12,7 @@ let upgrades = {
 };
 // DOM
 const ionDisplay = document.getElementById("ions")
+const ionPerSecDisplay = document.getElementById("ionsPerSec");
 const ionButton = document.getElementById("ion-zapper")
 const prestigeUI = document.getElementById("prestige-ui");
 const prestigeButton = document.getElementById("prestige-button");
@@ -28,6 +28,7 @@ const upgradeEntangle = document.getElementById("upgrade-entangle");
 
 function updateUI() {
     ionDisplay.textContent = ions.toFixed(1);
+    ionPerSecDisplay.textContent = ionsPerSec.toFixed(1);
     upgradeClickPower.textContent = `Upgrade Click Power (Lvl ${upgrades.clickPower.level}) - Cost: ${getUpgradeCost('clickPower')}`;
     upgradeAutoCollector.textContent = `Auto Collector (Lvl ${upgrades.autoCollector.level}) - Cost: ${getUpgradeCost('autoCollector')}`;
     upgradeEntangle.textContent = `Entangle (Lvl ${upgrades.entangle.level}) - cost: ${getUpgradeCost('entangle')}`;
@@ -62,6 +63,7 @@ upgradeAutoCollector.addEventListener("click", () => {
     if (ions >= cost) {
         ions -= cost;
         upgrades.autoCollector.level++;
+        ionsPerSec = upgrades.autoCollector.level;
         updateUI();
     }
 });
