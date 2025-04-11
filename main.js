@@ -95,5 +95,42 @@ setInterval(() => {
     }
 }, 1000);
 
+function saveGame() {
+    const saveData = {
+      ions,
+      ionPerClick,
+      totalIons,
+      ionsPerSec,
+      coherencePoints,
+      upgrades
+    };
+    localStorage.setItem("quantumIdleSave", JSON.stringify(saveData));
+  }
+function loadGame() {
+  const savedData = JSON.parse(localStorage.getItem("quantumIdleSave"));
+  if (savedData) {
+    ions = savedData.ions;
+    ionPerClick = savedData.ionPerClick;
+    totalIons = savedData.totalIons;
+    ionsPerSec = savedData.ionsPerSec;
+    coherencePoints = savedData.coherencePoints;
+    upgrades = savedData.upgrades;
+    updateUI();
+  }
+}
+function resetGame() {
+    localStorage.removeItem("quantumIdleSave");
+    location.reload(); // Reload the page to reset everything
+  }
+
+
+
+
+
+window.addEventListener("load", () => {
+    loadGame();
+  });
+
+
 
 updateUI();
