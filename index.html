@@ -7,38 +7,59 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- This is going to be an intro screen for the game, help! idk what im doing -->
+
+  <!-- Intro Screen -->
   <div id="intro-screen">
     <h1>Quantum Counting</h1>
     <p>You are conducting quantum experiments to generate Ions. You are starting small. Things will get smaller.</p>
     <button id="start-button">Start Experiment</button>
   </div>
 
+  <!-- Game Wrapper -->
+  <div id="game-wrapper">
+    <div id="game-screen" class="hidden">
 
-  <div id="game-screen" class="hidden">
+      <header>
+        <h1>Quantum Idle</h1>
+        <button onclick="saveGame()">Save</button>
+        <button onclick="loadGame()">Load</button>
+        <button onclick="resetGame()">Reset</button>
+        <p>Ions: <span id="ions">0</span></p>
+        <p>Ions/sec: <span id="ionsPerSec">0</span></p>
+      </header>
 
-    <header>
-      <h1>Quantum Idle</h1>
-      <button onclick="saveGame()">Save</button>
-      <button onclick="loadGame()">Load</button>
-      <button onclick="resetGame()">Reset</button>
-      <p>Ions: <span id="ions">0</span></p>
-      <p>Ions/sec: <span id="ionsPerSec">0</span></p>
-    </header>
+      <main>
+        <div class="ion-chamber">
+          <div class="chamber-core"></div>
+          <button id="ion-zapper" class="main-button">Zap Ion</button>
+        </div>  
 
-    <main>
-      <div class="ion-chamber">
-        <div class="chamber-core"></div>
-        <button id="ion-zapper" class="main-button">Zap Ion</button>
-      </div>  
-      <section class="upgrades">
-        <h2>Upgrades</h2>
-        <button id="upgrade-click" class="upgrade-button">Upgrade Click Power</button>
-        <button id="upgrade-auto" class="upgrade-button">Auto Collector</button>
-        <button id="upgrade-entangle" class ="upgrade-button">Entangle</button>
-      </section>
-    </main>
+        <section class="upgrades">
+          <h2>Upgrades</h2>
+          <button id="upgrade-click" class="upgrade-button">Upgrade Click Power</button>
+          <button id="upgrade-auto" class="upgrade-button">Auto Collector</button>
+          <button id="upgrade-entangle" class="upgrade-button">Entangle</button>
+        </section>
+      </main>
 
+      <!-- Coherence Section -->
+      <div id="coherence-section" class="hidden">
+        <h2>Decoherence Lab</h2>
+        <p>Coherence Points: <span id="coherence-points">0</span></p>
+        <p>Next at: <span id="coherence-next">2000</span></p>
+        <p>You'll gain: <span id="coherence-gain">0</span></p>
+        <button id="decoherence-button">Decoherence</button>
+
+        <div id="coherence-upgrades">
+          <h3>Permanent Coherence Upgrades</h3>
+          <!-- We'll create 3 buttons in the DOM, or dynamically with JS -->
+          <button id="coh-upgrade-0">Quantum Memory Boost (Cost 1)</button>
+          <button id="coh-upgrade-1">Quantum Stabilizer (Cost 3)</button>
+          <button id="coh-upgrade-2">Quantum Field Amplifier (Cost 7)</button>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <script src="main.js"></script>

@@ -196,6 +196,64 @@ header p {
   transform: scale(0.98);
 }
 
+#game-wrapper {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Decoherence Lab Panel */
+#coherence-section {
+  background: rgba(15, 15, 30, 0.95);
+  border: 2px solid #334455;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.1);
+  width: 300px;
+  color: #ccddff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#coherence-section h2 {
+  color: #cc66ff;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+#coherence-points {
+  font-size: 2rem;
+  color: #ff99ff;
+  font-weight: bold;
+}
+
+#decoherence-button {
+  background: linear-gradient(to right, #aa33cc, #550077);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#decoherence-button:hover {
+  background: linear-gradient(to right, #cc66ff, #7700aa);
+  transform: scale(1.05);
+}
+
+#coherence-gain,
+#coherence-next {
+  font-size: 1rem;
+  color: #aaaaff;
+}
 
 .hidden {
   display: none;
